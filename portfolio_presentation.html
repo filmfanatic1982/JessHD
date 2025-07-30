@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jess Harris-DiStefano - Senior Creative Strategist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow-x: hidden;
+        }
+        
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .slide-content {
+            max-width: 1000px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            animation: slideUp 0.8s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .slide-1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .slide-2 {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .slide-3 {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        .slide-4 {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+        
+        .slide-5 {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+        
+        .slide-6 {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #444;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+        
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .metric-card {
+            background: linear-gradient(135deg, #f8f9ff, #e8efff);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid #667eea20;
+        }
+        
+        .metric-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #667eea;
+            display: block;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .skill-tag {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .case-study {
+            background: #f8f9ff;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 1.5rem 0;
+            border-left: 5px solid #667eea;
+        }
+        
+        .quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #555;
+            text-align: center;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: #f8f9ff;
+            border-radius: 15px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+            margin: 1rem 0;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .nav-dots {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+        }
+        
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            margin: 0.5rem 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-dot.active {
+            background: white;
+            transform: scale(1.2);
+        }
+        
+        ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        
+        li {
+            margin: 0.8rem 0;
+            font-size: 1rem;
+        }
+        
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin: 2rem 0;
+        }
+        
+        .intro-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .profile-highlight {
+            background: linear-gradient(135deg, #667eea10, #764ba210);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .slide-content {
+                padding: 2rem;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .intro-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .nav-dots {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Dots -->
+    <div class="nav-dots">
+        <div class="nav-dot active" onclick="scrollToSlide(0)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(1)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(2)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(3)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(4)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(5)"></div>
+    </div>
+
+    <!-- Slide 1: Introduction -->
+    <div class="slide slide-1">
+        <div class="slide-content">
+            <div class="intro-grid">
+                <div>
+                    <h1>Hey Snowball! 👋</h1>
+                    <p class="subtitle">I'm Jess Harris-DiStefano, and I think we should work together.</p>
+                    <div class="intro-text">
+                        <p>You're building the best YouTube agency in the world. I've spent the last 18 years building the creative strategies, content formats, and team processes that make YouTube channels explode.</p>
+                        <p><strong>Most importantly:</strong> I spent 4 years at YouTube itself, leading creative strategy for their global creator programming. I know this platform inside and out.</p>
+                        <p>Here's why I'm your next Senior Creative Strategist...</p>
+                    </div>
+                </div>
+                <div class="profile-highlight">
+                    <h3>Quick Stats</h3>
+                    <div class="metric-card">
+                        <span class="metric-number">18+</span>
+                        Years in Creative Strategy
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-number">4</span>
+                        Years at YouTube HQ
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-number">85+</span>
+                        Team Members Led
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 2: My YouTube Superpower -->
+    <div class="slide slide-2">
+        <div class="slide-content">
+            <h2>My YouTube Superpower: Format Design + Performance Strategy</h2>
+            
+            <div class="highlight-box">
+                <h3>At YouTube, I didn't just work on content—I helped shape how the platform works.</h3>
+                <p>As Head of Creator & Diversity Programming, I led creative strategy for YouTube's global creator initiatives across 4 production studios, managing 85+ creative minds.</p>
+            </div>
+            
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <span class="metric-number">45%</span>
+                    Increase in creator channel performance through optimized packaging
+                </div>
+                <div class="metric-card">
+                    <span class="metric-number">25%</span>
+                    Boost in creator partnership engagement
+                </div>
+                <div class="metric-card">
+                    <span class="metric-number">400%</span>
+                    Growth in multi-platform reach (Wondery)
+                </div>
+            </div>
+            
+            <h3>What I Bring:</h3>
+            <ul>
+                <li><strong>Deep Algorithm Understanding:</strong> I've worked with YouTube's internal teams on content optimization</li>
+                <li><strong>Packaging Mastery:</strong> Titles, thumbnails, and metadata that actually perform</li>
+                <li><strong>Format Innovation:</strong> I create content frameworks that scale across channels</li>
+                <li><strong>Performance-Driven Creativity:</strong> Beautiful content that hits metrics</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 3: Proven Client & Team Leadership -->
+    <div class="slide slide-3">
+        <div class="slide-content">
+            <h2>I've Been Your Client-Facing Creative Leader</h2>
+            
+            <div class="case-study">
+                <h3>🎯 YouTube Creators Program</h3>
+                <p><strong>Challenge:</strong> Serve as key strategic contact for top YouTube creators while managing global creative operations</p>
+                <p><strong>My Approach:</strong> Created standardized creative review processes and performance tracking systems while maintaining personalized strategic guidance</p>
+                <p><strong>Result:</strong> 25% increase in creator partnership engagement with streamlined delivery processes</p>
+            </div>
+            
+            <div class="case-study">
+                <h3>🚀 Wondery Content Strategy</h3>
+                <p><strong>Challenge:</strong> Scale content strategy across multiple platforms while maintaining editorial excellence</p>
+                <p><strong>My Approach:</strong> Built predictive analytics frameworks and content workflows optimized for different audience behaviors</p>
+                <p><strong>Result:</strong> 35% engagement boost, $2M revenue growth, 400% reach expansion</p>
+            </div>
+            
+            <div class="quote">
+                "I don't just present strategy—I become your creative partner. I think high-level and in the weeds, exactly like you need."
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: Mentorship & Team Building -->
+    <div class="slide slide-4">
+        <div class="slide-content">
+            <h2>I Love Making Creative Teams Better</h2>
+            
+            <p class="subtitle">You mentioned wanting someone who can coach and uplevel producers and junior strategists. That's literally been my job for years.</p>
+            
+            <div class="highlight-box">
+                <h3>At YouTube, I managed 85+ creative professionals across 4 global studios</h3>
+                <p>I didn't just manage—I mentored. I created editorial frameworks, standardized creative workflows, and established performance tracking that helped junior team members understand what makes content work.</p>
+            </div>
+            
+            <h3>My Mentorship Philosophy:</h3>
+            <ul>
+                <li><strong>Editorial Excellence:</strong> I teach the "why" behind creative decisions, not just the "what"</li>
+                <li><strong>Performance Mindset:</strong> I help creatives understand metrics without killing creativity</li>
+                <li><strong>Scalable Processes:</strong> I build systems that help teams work better, not harder</li>
+                <li><strong>Constructive Feedback:</strong> I'm kind by being clear—direct feedback that helps people grow</li>
+            </ul>
+            
+            <div class="skill-tags">
+                <span class="skill-tag">Editorial Leadership</span>
+                <span class="skill-tag">Creative Coaching</span>
+                <span class="skill-tag">Process Building</span>
+                <span class="skill-tag">Team Development</span>
+                <span class="skill-tag">Performance Training</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: Why I'm Perfect for Snowball -->
+    <div class="slide slide-5">
+        <div class="slide-content">
+            <h2>Why Snowball + Jess = Magic</h2>
+            
+            <div class="intro-grid">
+                <div>
+                    <h3>You're betting everything on YouTube being the next frontier.</h3>
+                    <p>I've already been living in that frontier for years. I understand:</p>
+                    <ul>
+                        <li>How brands can authentically succeed on YouTube</li>
+                        <li>What makes "boring" B2B content hit millions of views</li>
+                        <li>How to balance creative excellence with performance demands</li>
+                        <li>The difference between viral content and sustainable channel growth</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="highlight-box">
+                        <h3>Your Values = My Experience</h3>
+                        <p><strong>Work hard, learn harder:</strong> 18 years of staying ahead of platform changes</p>
+                        <p><strong>Be effectively proactive:</strong> Built predictive content frameworks</p>
+                        <p><strong>Overdeliver for clients:</strong> Consistent 25-45% performance improvements</p>
+                        <p><strong>A+ players only:</strong> Led 85+ person creative teams</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quote">
+                "I don't just understand YouTube—I helped build the creative strategies that made it work for creators and brands."
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: Let's Build Together -->
+    <div class="slide slide-6">
+        <div class="slide-content">
+            <h2>Ready to Build the Future of YouTube?</h2>
+            
+            <div class="highlight-box">
+                <h3>Here's what I bring to Snowball on Day 1:</h3>
+                <ul>
+                    <li>Deep YouTube platform expertise from working at headquarters</li>
+                    <li>Proven track record of 25-45% performance improvements</li>
+                    <li>Client management experience with top-tier creators and brands</li>
+                    <li>Team leadership and mentorship capabilities</li>
+                    <li>Format design and packaging strategy expertise</li>
+                    <li>Editorial leadership with performance focus</li>
+                </ul>
+            </div>
+            
+            <div class="case-study">
+                <h3>💡 My First 90 Days at Snowball</h3>
+                <p><strong>Days 1-30:</strong> Deep dive into current client strategies, identify optimization opportunities</p>
+                <p><strong>Days 31-60:</strong> Implement creative review processes, begin mentoring junior team members</p>
+                <p><strong>Days 61-90:</strong> Launch new format frameworks, establish performance tracking systems</p>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <p class="subtitle">I'm not just looking for a job—I'm looking to help build something incredible.</p>
+                <a href="mailto:Joharris82@gmail.com" class="cta-button">Let's Talk Strategy →</a>
+                <p style="margin-top: 1rem; color: #666;">Joharris82@gmail.com | (201)281-2438</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.nav-dot');
+        
+        function scrollToSlide(index) {
+            currentSlide = index;
+            slides[index].scrollIntoView({ behavior: 'smooth' });
+            updateActiveDot();
+        }
+        
+        function updateActiveDot() {
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+        
+        // Handle scroll events to update active dot
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY + window.innerHeight / 2;
+            
+            slides.forEach((slide, index) => {
+                const slideTop = slide.offsetTop;
+                const slideBottom = slideTop + slide.offsetHeight;
+                
+                if (scrollPosition >= slideTop && scrollPosition < slideBottom) {
+                    if (currentSlide !== index) {
+                        currentSlide = index;
+                        updateActiveDot();
+                    }
+                }
+            });
+        });
+        
+        // Smooth scrolling for better experience
+        document.documentElement.style.scrollBehavior = 'smooth';
+    </script>
+</body>
+</html>
